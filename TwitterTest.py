@@ -1,9 +1,8 @@
 from tweepy.streaming import StreamListener
 from tweepy import OAuthHandler
 from tweepy import Stream
-from kafka import SimpleProducer
-from kafka import KafkaClient
-from kafka import KafkaConsumer
+from kafka import KafkaProducer
+import json
 	
 access_token = ""
 access_token_secret= ""
@@ -25,4 +24,4 @@ if __name__ == '__main__':
 	   auth = OAuthHandler(consumer_key, consumer_secret)
 	   auth.set_access_token(access_token, access_token_secret)
 	   stream = Stream(auth, I)
-	   stream.filter(track='#######')
+	   stream.filter(track='EM2020')
